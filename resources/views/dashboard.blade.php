@@ -53,12 +53,13 @@
             <div class="sidebar-logo">
                 <!-- Logo Header -->
                 <div class="logo-header" data-background-color="dark">
-                    <a href="index.html" class="logo">
-                        <img
+                    <a href="{{ url('/') }}" class="logo text-light">
+                        <!-- <img
                             src="assets/img/kaiadmin/logo_light.svg"
                             alt="navbar brand"
                             class="navbar-brand"
-                            height="20" />
+                            height="20" /> -->
+                            XureBuilt Connect
                     </a>
                     <div class="nav-toggle">
                         <button class="btn btn-toggle toggle-sidebar">
