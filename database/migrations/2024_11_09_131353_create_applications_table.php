@@ -19,9 +19,11 @@ class CreateApplicationsTable extends Migration
             $table->json('files')->nullable();
             $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending'); // 'pending', 'accepted', 'rejected'
             $table->foreignId('job_listing_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Technician applying
+            $table->uuid('user_id');
             $table->softDeletes();
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

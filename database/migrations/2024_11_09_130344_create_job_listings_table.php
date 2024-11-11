@@ -23,9 +23,11 @@ class CreateJobListingsTable extends Migration
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->boolean('is_active')->default(true);
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Company or user posting the job
+            $table->uuid('user_id');
             $table->softDeletes();
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

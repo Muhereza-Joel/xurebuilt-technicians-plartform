@@ -20,9 +20,11 @@ class CreateTechnicianProfilesTable extends Migration
             $table->text('experience')->nullable();
             $table->string('location')->nullable();
             $table->boolean('verified')->default(false);
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->uuid('user_id');
             $table->softDeletes();
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -17,10 +17,11 @@ class CreateReviewsTable extends Migration
             $table->uuid('id')->primary();
             $table->integer('rating');
             $table->text('comment')->nullable();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Reviewer
-            $table->foreignId('technician_id')->constrained('users')->onDelete('cascade'); // Technician being reviewed
+            $table->uuid('user_id');
             $table->softDeletes();
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

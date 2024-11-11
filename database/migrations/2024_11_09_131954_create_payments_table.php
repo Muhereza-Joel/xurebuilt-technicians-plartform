@@ -18,11 +18,14 @@ class CreatePaymentsTable extends Migration
             $table->string('currency');
             $table->decimal('amount', 10, 2);
             $table->string('payment_method');
-            $table->enum('status', ['pending', 'completed'])->default('pending'); // 'pending', 'completed'
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Technician receiving the payment
-            $table->foreignId('job_listing_id')->constrained()->onDelete('cascade');
+            $table->enum('status', ['pending', 'completed'])->default('pending');
+            $table->uuid('user_id');
+            $table->uuid('job_listing_id');
             $table->softDeletes();
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('job_listing_id')->references('id')->on('job_listings')->onDelete('cascade');
         });
     }
 
