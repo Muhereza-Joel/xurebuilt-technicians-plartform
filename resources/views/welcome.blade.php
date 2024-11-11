@@ -45,7 +45,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#">Explore Technicians</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://connect.xurebuilt.com/" target="_blank">Our Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://connect.xurebuilt.com/">Our Store</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact Sales</a></li>
                 </ul>
 
@@ -392,11 +392,11 @@
                 <div class="col-12 col-md-4 mb-4 mb-md-0">
                     <h5 class="fw-bold mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="https://connect.xurebuilt.com/" target="_blank" class="text-decoration-none text-success">Our Store</a></li>
+                        <li><a href="https://xurebuilt.com/" class="text-decoration-none text-success">Our Store</a></li>
                         <li><a href="#features" class="text-decoration-none text-success">Features</a></li>
                         <li><a href="#pricing" class="text-decoration-none text-success">Pricing</a></li>
-                        <li><a href="https://xurebuilt.com/about-us/" target="_blank" class="text-decoration-none text-success">About Us</a></li>
-                        <li><a href="https://xurebuilt.com/contact-us/" target="_blank" class="text-decoration-none text-success">Contact</a></li>
+                        <li><a href="https://xurebuilt.com/about-us/" class="text-decoration-none text-success">About Us</a></li>
+                        <li><a href="https://xurebuilt.com/contact-us/" class="text-decoration-none text-success">Contact</a></li>
                         <li><a href="#faq" class="text-decoration-none text-success">FAQ</a></li>
                     </ul>
                 </div>
