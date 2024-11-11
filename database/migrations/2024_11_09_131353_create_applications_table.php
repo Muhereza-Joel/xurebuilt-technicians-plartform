@@ -18,12 +18,13 @@ class CreateApplicationsTable extends Migration
             $table->text('cover_letter')->nullable();
             $table->json('files')->nullable();
             $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending'); // 'pending', 'accepted', 'rejected'
-            $table->foreignId('job_listing_id')->constrained()->onDelete('cascade');
+            $table->uuid('job_listing_id');
             $table->uuid('user_id');
             $table->softDeletes();
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('job_listing_id')->references('id')->on('job_listings')->onDelete('cascade');
         });
     }
 
