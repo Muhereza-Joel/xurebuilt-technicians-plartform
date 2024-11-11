@@ -70,8 +70,8 @@
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-6">
                                 <div class="text-center my-5">
-                                    <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Connect with Skilled Technicians</h1>
-                                    <p class="lead text-white-50 mb-4 slide-in-up">Easily hire trusted professionals for your construction projects, all in one place.</p>
+                                    <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Connect with Skilled Technicians In Seconds</h1>
+                                    <p class="lead text-white-50 mb-4 slide-in-up">Easily hire trusted professionals for your construction projects, all in one place with a single click.</p>
                                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                         <a class="btn btn-success btn-lg px-4 me-sm-3" href="#services">Find Technicians</a>
                                         <a class="btn btn-outline-light btn-lg px-4" href="#about">How It Works</a>
@@ -85,7 +85,7 @@
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-6">
                                 <div class="text-center my-5">
-                                    <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Efficiently Connect Technicians and Clients</h1>
+                                    <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Efficiently Connecting Technicians and Clients</h1>
                                     <p class="lead text-white-50 mb-4 slide-in-up">Our platform makes it easy for technicians to get hired and for clients to find the best professionals for their projects.</p>
                                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                         <a class="btn btn-success btn-lg px-4 me-sm-3" href="#features">Find Technicians</a>
@@ -100,7 +100,7 @@
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-6">
                                 <div class="text-center my-5">
-                                    <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Seamless Payment System</h1>
+                                    <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Utilise Our Seamless Payment System</h1>
                                     <p class="lead text-white-50 mb-4 slide-in-up">Secure, easy, and efficient payments for completed work, ensuring satisfaction for both clients and technicians.</p>
                                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                         <a class="btn btn-success btn-lg px-4 me-sm-3" href="#features">Start Now</a>
@@ -110,6 +110,38 @@
                             </div>
                         </div>
                     </div>
+                    <div class="carousel-item">
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="text-center my-5">
+                                    <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Why Settle for Less? Shop at Our Store!</h1>
+                                    <p class="lead text-white-50 mb-4 slide-in-up">
+                                        Shop conveniently and get high-quality supplies delivered directly to your site in just few hours.
+                                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                                        <a class="btn btn-success btn-lg px-4 me-sm-3" href="https://xurebuilt.com">Shop Now</a>
+                                        <a class="btn btn-outline-light btn-lg px-4" href="#how-it-works">How It Works</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="text-center my-5">
+                                    <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Rent High-Quality Construction Machines</h1>
+                                    <p class="lead text-white-50 mb-4 slide-in-up">Access a wide range of construction machines for your projects. Quick rentals, reliable service, and affordable prices.</p>
+                                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                                        <a class="btn btn-success btn-lg px-4 me-sm-3" href="https://xurebuilt.com/machines-now/">Browse Machines</a>
+                                        <a class="btn btn-outline-light btn-lg px-4" href="">How It Works</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
                 <!-- Carousel Controls -->
                 <a class="carousel-control-prev" href="#headerCarousel" role="button" data-bs-slide="prev">
