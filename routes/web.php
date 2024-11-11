@@ -30,3 +30,4 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/payment-methods', [PageController::class, 'showPaymentOptionsPage'])->name('paymentOptions');
+Route::get('/technicians-finder', [PageController::class, 'showTechniciansFinder'])->name('techniciansFinder');

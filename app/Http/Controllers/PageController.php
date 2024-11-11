@@ -10,4 +10,9 @@ class PageController extends Controller
     {
         return view('pages.paymentOptions');
     }
+
+    public function showTechniciansFinder()
+    {
+        return view('pages.finder');
+    }
 }

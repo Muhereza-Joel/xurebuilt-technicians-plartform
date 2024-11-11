@@ -37,29 +37,7 @@
 
 <body>
     <!-- Responsive navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #202940 !important;">
-        <div class="container px-5">
-            <a class="navbar-brand" href="{{ url('/') }}">XureBuilt Connect</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="#">Explore Technicians</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://xurebuilt.com/">Our Store</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact Sales</a></li>
-                </ul>
-
-                <!-- Sign Up and Login buttons -->
-                <div class="d-flex ms-lg-3">
-                    <!-- Sign Up Button -->
-                    <a href="{{ route('register') }}" class="btn btn-outline-light me-2">Sign Up</a>
-                    <!-- Login Button -->
-                    <a href="{{ url('/login') }}" class="btn btn-success">Login</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
+    @include('layouts.appBar')
     <!-- Header-->
     <header class="py-5" style="background-color: #202940 !important;">
         <div class="container px-5">
@@ -73,7 +51,7 @@
                                     <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Connect with Skilled Technicians In Seconds</h1>
                                     <p class="lead text-white-50 mb-4 slide-in-up">Easily hire trusted professionals for your construction projects, all in one place with a single click.</p>
                                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                        <a class="btn btn-success btn-lg px-4 me-sm-3" href="#services">Find Technicians</a>
+                                        <a class="btn btn-success btn-lg px-4 me-sm-3" href="{{ route('techniciansFinder') }}">Find Technicians</a>
                                         <a class="btn btn-outline-light btn-lg px-4" href="#about">How It Works</a>
                                     </div>
                                 </div>
@@ -88,7 +66,7 @@
                                     <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Efficiently Connecting Technicians and Clients</h1>
                                     <p class="lead text-white-50 mb-4 slide-in-up">Our platform makes it easy for technicians to get hired and for clients to find the best professionals for their projects.</p>
                                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                        <a class="btn btn-success btn-lg px-4 me-sm-3" href="#features">Find Technicians</a>
+                                        <a class="btn btn-success btn-lg px-4 me-sm-3" href="{{ route('techniciansFinder') }}">Find Technicians</a>
                                         <a class="btn btn-outline-light btn-lg px-4" href="">How It Works</a>
                                     </div>
                                 </div>
@@ -170,7 +148,7 @@
                         <div>
                             <h2 class="h4 fw-bolder text-success">Find Skilled Technicians</h2>
                             <p>Browse a vast network of qualified professionals for all your construction needs, from plumbers and electricians to builders and carpenters.</p>
-                            <a class="text-decoration-none text-success" href="#!">
+                            <a class="text-decoration-none text-success" href="{{ route('techniciansFinder') }}">
                                 Explore Technicians
                                 <i class="bi bi-arrow-right"></i>
                             </a>

@@ -19,25 +19,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #202940;">
-        <div class="container px-5">
-            <a class="navbar-brand" href="{{ url('/') }}">XureBuilt Connect</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Explore Technicians</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://xurebuilt.com/">Our Store</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact Sales</a></li>
-                </ul>
-                <div class="d-flex ms-lg-3">
-                    <a href="{{ route('register') }}" class="btn btn-outline-light me-2">Sign Up</a>
-                    <a href="{{ url('/login') }}" class="btn btn-success">Login</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('layouts.appBar')
 
     <!-- Page Header -->
     <header class="py-5 text-center text-white" style="background-color: #202940;">
