@@ -158,12 +158,11 @@
     </header>
 
     <!-- Features section-->
-    <!-- Features section with side-by-side graphics -->
     <section class="py-5 border-bottom" id="features">
         <div class="container px-5 my-5">
             <div class="row gx-5">
                 <!-- Graphic/Feature 1 -->
-                <div class="col-md-6 mb-5">
+                <div class="col-md-6 mb-5 wow animate__animated animate__slideInUp" data-wow-delay="0.1s">
                     <div class="d-flex">
                         <div class="icon-container bg-success text-white rounded-3 me-3">
                             <i class="bi bi-people"></i>
@@ -172,14 +171,15 @@
                             <h2 class="h4 fw-bolder text-success">Find Skilled Technicians</h2>
                             <p>Browse a vast network of qualified professionals for all your construction needs, from plumbers and electricians to builders and carpenters.</p>
                             <a class="text-decoration-none text-success" href="#!">
-                                Learn More
+                                Explore Technicians
                                 <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
+
                 <!-- Graphic/Feature 2 -->
-                <div class="col-md-6 mb-5">
+                <div class="col-md-6 mb-5 wow animate__animated animate__slideInUp" data-wow-delay="0.2s">
                     <div class="d-flex">
                         <div class="icon-container bg-success text-white rounded-3 me-3">
                             <i class="bi bi-clipboard-data"></i>
@@ -194,8 +194,9 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Graphic/Feature 3 -->
-                <div class="col-md-6 mb-5">
+                <div class="col-md-6 mb-5 wow animate__animated animate__slideInUp" data-wow-delay="0.3s">
                     <div class="d-flex">
                         <div class="icon-container bg-success text-white rounded-3 me-3">
                             <i class="bi bi-cash-coin"></i>
@@ -203,15 +204,16 @@
                         <div>
                             <h2 class="h4 fw-bolder text-success">Secure and Easy Payments</h2>
                             <p>Effortlessly manage and track payments with our secure, integrated system that ensures a smooth experience for both clients and technicians.</p>
-                            <a class="text-decoration-none text-success" href="#!">
+                            <a class="text-decoration-none text-success" href="{{ route('paymentOptions') }}">
                                 Payment Options
                                 <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
+
                 <!-- Graphic/Feature 4 -->
-                <div class="col-md-6 mb-5">
+                <div class="col-md-6 mb-5 wow animate__animated animate__slideInUp" data-wow-delay="0.4s">
                     <div class="d-flex">
                         <div class="icon-container bg-success text-white rounded-3 me-3">
                             <i class="bi bi-shield-lock"></i>
@@ -230,6 +232,7 @@
         </div>
     </section>
 
+
     <!-- Pricing section-->
     <section class="bg-light py-5 border-bottom">
         <div class="container px-5 my-5">
@@ -239,7 +242,7 @@
             </div>
             <div class="row gx-5 justify-content-center">
                 <!-- Pricing card free-->
-                <div class="col-lg-6 col-xl-4">
+                <div class="col-lg-6 col-xl-4 wow animate__animated animate__slideInRight" data-wow-delay="0.1s">
                     <div class="card mb-5 mb-xl-0">
                         <div class="card-body p-5">
                             <div class="small text-uppercase fw-bold text-muted">Starter</div>
@@ -324,7 +327,7 @@
                     </div>
                 </div>
                 <!-- Pricing card enterprise-->
-                <div class="col-lg-6 col-xl-4">
+                <div class="col-lg-6 col-xl-4 wow animate__animated animate__slideInLeft" data-wow-delay="0.1s">
                     <div class="card">
                         <div class="card-body p-5">
                             <div class="small text-uppercase fw-bold text-muted">Enterprise</div>
