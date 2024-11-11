@@ -61,7 +61,7 @@
                             <!-- Submit Button -->
                             <div class="row mb-0">
                                 <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary">{{ __('Register') }}</button>
+                                    <button type="submit" class="btn btn-success">{{ __('Register') }}</button>
                                     <a href="{{ route('login') }}" class="btn btn-link mt-2">{{ __('Go back to login') }}</a>
                                 </div>
                             </div>

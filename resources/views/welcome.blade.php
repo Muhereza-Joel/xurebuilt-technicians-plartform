@@ -53,7 +53,7 @@
                     <!-- Sign Up Button -->
                     <a href="{{ route('register') }}" class="btn btn-outline-light me-2">Sign Up</a>
                     <!-- Login Button -->
-                    <a href="{{ url('/login') }}" class="btn btn-primary">Login</a>
+                    <a href="{{ url('/login') }}" class="btn btn-success">Login</a>
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@
                                     <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Connect with Skilled Technicians</h1>
                                     <p class="lead text-white-50 mb-4 slide-in-up">Easily hire trusted professionals for your construction projects, all in one place.</p>
                                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#services">Find Technicians</a>
+                                        <a class="btn btn-success btn-lg px-4 me-sm-3" href="#services">Find Technicians</a>
                                         <a class="btn btn-outline-light btn-lg px-4" href="#about">How It Works</a>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@
                                     <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Efficiently Connect Technicians and Clients</h1>
                                     <p class="lead text-white-50 mb-4 slide-in-up">Our platform makes it easy for technicians to get hired and for clients to find the best professionals for their projects.</p>
                                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Discover More</a>
+                                        <a class="btn btn-success btn-lg px-4 me-sm-3" href="#features">Discover More</a>
                                         <a class="btn btn-outline-light btn-lg px-4" href="">How It Works</a>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                     <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Seamless Payment System</h1>
                                     <p class="lead text-white-50 mb-4 slide-in-up">Secure, easy, and efficient payments for completed work, ensuring satisfaction for both clients and technicians.</p>
                                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Start Now</a>
+                                        <a class="btn btn-success btn-lg px-4 me-sm-3" href="#features">Start Now</a>
                                         <a class="btn btn-outline-light btn-lg px-4" href="">Learn About Payments</a>
                                     </div>
                                 </div>
@@ -132,13 +132,13 @@
                 <!-- Graphic/Feature 1 -->
                 <div class="col-md-6 mb-5">
                     <div class="d-flex">
-                        <div class="icon-container bg-primary text-white rounded-3 me-3">
+                        <div class="icon-container bg-success text-white rounded-3 me-3">
                             <i class="bi bi-people"></i>
                         </div>
                         <div>
-                            <h2 class="h4 fw-bolder">Find Skilled Technicians</h2>
+                            <h2 class="h4 fw-bolder text-success">Find Skilled Technicians</h2>
                             <p>Browse a vast network of qualified professionals for all your construction needs, from plumbers and electricians to builders and carpenters.</p>
-                            <a class="text-decoration-none" href="#!">
+                            <a class="text-decoration-none text-success" href="#!">
                                 Learn More
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -148,13 +148,13 @@
                 <!-- Graphic/Feature 2 -->
                 <div class="col-md-6 mb-5">
                     <div class="d-flex">
-                        <div class="icon-container bg-primary text-white rounded-3 me-3">
+                        <div class="icon-container bg-success text-white rounded-3 me-3">
                             <i class="bi bi-clipboard-data"></i>
                         </div>
                         <div>
-                            <h2 class="h4 fw-bolder">Post Your Projects</h2>
+                            <h2 class="h4 fw-bolder text-success">Post Your Projects</h2>
                             <p>Share your project details and get matched with the best technicians ready to bring your vision to life, on time and within budget.</p>
-                            <a class="text-decoration-none" href="#!">
+                            <a class="text-decoration-none text-success" href="#!">
                                 Post a Project
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -164,13 +164,13 @@
                 <!-- Graphic/Feature 3 -->
                 <div class="col-md-6 mb-5">
                     <div class="d-flex">
-                        <div class="icon-container bg-primary text-white rounded-3 me-3">
+                        <div class="icon-container bg-success text-white rounded-3 me-3">
                             <i class="bi bi-cash-coin"></i>
                         </div>
                         <div>
-                            <h2 class="h4 fw-bolder">Secure and Easy Payments</h2>
+                            <h2 class="h4 fw-bolder text-success">Secure and Easy Payments</h2>
                             <p>Effortlessly manage and track payments with our secure, integrated system that ensures a smooth experience for both clients and technicians.</p>
-                            <a class="text-decoration-none" href="#!">
+                            <a class="text-decoration-none text-success" href="#!">
                                 Payment Options
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -180,13 +180,13 @@
                 <!-- Graphic/Feature 4 -->
                 <div class="col-md-6 mb-5">
                     <div class="d-flex">
-                        <div class="icon-container bg-primary text-white rounded-3 me-3">
+                        <div class="icon-container bg-success text-white rounded-3 me-3">
                             <i class="bi bi-shield-lock"></i>
                         </div>
                         <div>
-                            <h2 class="h4 fw-bolder">Trust and Safety</h2>
+                            <h2 class="h4 fw-bolder text-success">Trust and Safety</h2>
                             <p>Our platform prioritizes the safety and trust of all users, providing tools and support to ensure secure interactions and reliable outcomes.</p>
-                            <a class="text-decoration-none" href="#!">
+                            <a class="text-decoration-none text-success" href="#!">
                                 Learn More
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -201,7 +201,7 @@
     <section class="bg-light py-5 border-bottom">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
-                <h2 class="fw-bolder">Choose the Plan that Fits Your Needs</h2>
+                <h2 class="fw-bolder text-success">Choose the Plan that Fits Your Needs</h2>
                 <p class="lead mb-0">Flexible, affordable plans for technicians and clients alike.</p>
             </div>
             <div class="row gx-5 justify-content-center">
@@ -241,7 +241,7 @@
                                 </li>
                             </ul>
                             <div class="d-grid">
-                                <a class="btn btn-outline-primary" href="#!">Choose Plan</a>
+                                <a class="btn btn-outline-success" href="">Choose Plan</a>
                             </div>
                         </div>
                     </div>
@@ -285,7 +285,7 @@
                                 </li>
                             </ul>
                             <div class="d-grid">
-                                <a class="btn btn-primary" href="#!">Choose Plan</a>
+                                <a class="btn btn-success" href="">Choose Plan</a>
                             </div>
                         </div>
                     </div>
@@ -326,7 +326,7 @@
                                 </li>
                             </ul>
                             <div class="d-grid">
-                                <a class="btn btn-outline-primary" href="#!">Choose Plan</a>
+                                <a class="btn btn-outline-success" href="">Choose Plan</a>
                             </div>
                         </div>
                     </div>
@@ -339,7 +339,7 @@
     <section class="py-5 border-bottom">
         <div class="container px-5 my-5 px-5">
             <div class="text-center mb-5">
-                <h2 class="fw-bolder">Customer testimonials</h2>
+                <h2 class="fw-bolder text-success">Customer testimonials</h2>
                 <p class="lead mb-0">Our customers love working with us</p>
             </div>
             <div class="row gx-5 justify-content-center">
@@ -348,7 +348,7 @@
                     <div class="card mb-4">
                         <div class="card-body p-4">
                             <div class="d-flex">
-                                <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-success fs-1"></i></div>
                                 <div class="ms-4">
                                     <p class="mb-1">Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!</p>
                                     <div class="small text-muted">- Client Name, Location</div>
@@ -360,7 +360,7 @@
                     <div class="card">
                         <div class="card-body p-4">
                             <div class="d-flex">
-                                <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-success fs-1"></i></div>
                                 <div class="ms-4">
                                     <p class="mb-1">The whole team was a huge help with putting things together for our company and brand. We will be hiring them again in the near future for additional work!</p>
                                     <div class="small text-muted">- Client Name, Location</div>
@@ -378,10 +378,10 @@
             <div class="row">
                 <!-- Logo and Info -->
                 <div class="col-12 col-md-4 mb-4 mb-md-0">
-                    <h5 class="fw-bold mb-3">Xurebuilt Connect</h5>
+                    <h5 class="fw-bold mb-3 text-success">Xurebuilt Connect</h5>
                     <p class="mb-3">Connecting technicians with clients for hassle-free, professional construction services. Find trusted experts and manage your projects with ease.</p>
                     <ul class="list-unstyled">
-                        <li><i class="bi bi-house-door"></i> Plot 23 Lugard Street, Fortportal Tourism City, Uganda</li>
+                        <li><i class="bi bi-house-door"></i> Plot 1 Lugard Street, Fortportal Tourism City, Uganda</li>
                         <li><i class="bi bi-phone"></i> (+256) 772240510</li>
                         <li><i class="bi bi-envelope"></i> info@xurebuilt.com</li>
                     </ul>
@@ -391,11 +391,11 @@
                 <div class="col-12 col-md-4 mb-4 mb-md-0">
                     <h5 class="fw-bold mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#features" class="text-decoration-none">Features</a></li>
-                        <li><a href="#pricing" class="text-decoration-none">Pricing</a></li>
-                        <li><a href="#about" class="text-decoration-none">About Us</a></li>
-                        <li><a href="#contact" class="text-decoration-none">Contact</a></li>
-                        <li><a href="#faq" class="text-decoration-none">FAQ</a></li>
+                        <li><a href="#features" class="text-decoration-none text-success">Features</a></li>
+                        <li><a href="#pricing" class="text-decoration-none text-success">Pricing</a></li>
+                        <li><a href="#about" class="text-decoration-none text-success">About Us</a></li>
+                        <li><a href="#contact" class="text-decoration-none text-success">Contact</a></li>
+                        <li><a href="#faq" class="text-decoration-none text-success">FAQ</a></li>
                     </ul>
                 </div>
 

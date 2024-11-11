@@ -46,7 +46,7 @@
                                 </label>
                             </div>
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
+                                <button type="submit" class="btn btn-success">{{ __('Login') }}</button>
                             </div>
                             @if (Route::has('password.request'))
                             <div class="text-center">
