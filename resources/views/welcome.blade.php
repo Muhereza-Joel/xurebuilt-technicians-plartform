@@ -45,7 +45,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#">Explore Technicians</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://connect.xurebuilt.com/">Our Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://xurebuilt.com/">Our Store</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact Sales</a></li>
                 </ul>
 
@@ -88,7 +88,7 @@
                                     <h1 class="display-5 fw-bolder text-white mb-2 fade-in">Efficiently Connect Technicians and Clients</h1>
                                     <p class="lead text-white-50 mb-4 slide-in-up">Our platform makes it easy for technicians to get hired and for clients to find the best professionals for their projects.</p>
                                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                        <a class="btn btn-success btn-lg px-4 me-sm-3" href="#features">Discover More</a>
+                                        <a class="btn btn-success btn-lg px-4 me-sm-3" href="#features">Find Technicians</a>
                                         <a class="btn btn-outline-light btn-lg px-4" href="">How It Works</a>
                                     </div>
                                 </div>
