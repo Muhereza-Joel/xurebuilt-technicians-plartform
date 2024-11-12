@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
@@ -27,6 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/countries', CountryController::class);
 });
 
 Route::get('/payment-methods', [PageController::class, 'showPaymentOptionsPage'])->name('paymentOptions');

@@ -1,103 +1,226 @@
-<!-- ======= Sidebar ======= -->
-@php
-$other_organizations = session('other_organizations');
-@endphp
-<aside id="sidebar" class="sidebar">
-
-  <style>
-    .nav-link.active {
-      color: #fff;
-      border-left: 10px solid #14445e;
-      background-color: #181f1d;
-    }
-  </style>
-
-
-  <ul class="sidebar-nav" id="sidebar-nav">
-
-    <li class="nav-item">
-      <a class="nav-link" href="{{ route('dashboard') }}">
-        <img src="{{ isset(Auth::user()->organisation->logo) ? asset(Auth::user()->organisation->logo) : asset('assets/img/placeholder.png') }}" alt="Profile" class="rounded-circle bg-light p-1 me-1" width="30px" height="30px" style="object-fit: cover; border: 2px solid #fff">
-        <span>{{ __('Dashboard') }}</span>
+<div class="sidebar" data-background-color="dark">
+  <div class="sidebar-logo">
+    <!-- Logo Header -->
+    <div class="logo-header" data-background-color="dark">
+      <a href="{{ url('/dashboard') }}" class="logo text-light">
+       
+        XureBuilt Connect
       </a>
-    </li>
-
-    <li class="nav-item dashboard-tour-step-1">
-      <a class="nav-link" href="{{ route('theory.index') }}">
-        <img src="{{ isset(Auth::user()->organisation->logo) ? asset(Auth::user()->organisation->logo) : asset('assets/img/placeholder.png') }}" alt="Profile" class="rounded-circle bg-light p-1 me-1" width="30px" height="30px" style="object-fit: cover; border: 2px solid #fff">
-        <span>{{ __('Theories of Change') }}</span>
-      </a>
-    </li>
-
-
-    <li class="nav-item">
-      <a class="nav-link" href="{{ route('indicators.index') }}">
-        <img src="{{ isset(Auth::user()->organisation->logo) ? asset(Auth::user()->organisation->logo) : asset('assets/img/placeholder.png') }}" alt="Profile" class="rounded-circle bg-light p-1 me-1" width="30px" height="30px" style="object-fit: cover; border: 2px solid #fff">
-        <span>{{ __('Indicators') }}</span>
-      </a>
-    </li>
-
-
-    @if (str_starts_with(Auth::user()->organisation->name, 'Administrator'))
-    <li class="nav-item">
-      <a class="nav-link" href="{{ route('organisations.index') }}">
-        <img src="{{ isset(Auth::user()->organisation->logo) ? asset(Auth::user()->organisation->logo) : asset('assets/img/placeholder.png') }}" alt="Profile" class="rounded-circle bg-light p-1 me-1" width="30px" height="30px" style="object-fit: cover; border: 2px solid #fff">
-        <span>{{ __('Organisations') }}</span>
-      </a>
-    </li>
-    @endif
-
-    <li class="nav-item dashboard-tour-step-2">
-      <a class="nav-link" href="{{ route('archives.index') }}">
-        <img src="{{ isset(Auth::user()->organisation->logo) ? asset(Auth::user()->organisation->logo) : asset('assets/img/placeholder.png') }}" alt="Profile" class="rounded-circle bg-light p-1 me-1" width="30px" height="30px" style="object-fit: cover; border: 2px solid #fff">
-        <span>{{ __('Archives') }}</span>
-      </a>
-    </li>
-    
-    @if( Auth::user()->role === 'admin' || Auth::user()->role === 'root')
-    <li class="nav-item">
-      <a class="nav-link" href="{{ route('users.index') }}">
-        <img src="{{ isset(Auth::user()->organisation->logo) ? asset(Auth::user()->organisation->logo) : asset('assets/img/placeholder.png') }}" alt="Profile" class="rounded-circle bg-light p-1 me-1" width="30px" height="30px" style="object-fit: cover; border: 2px solid #fff">
-        <span>{{ __('Users') }}</span>
-      </a>
-    </li>
-
-    <li class="nav-item dashboard-tour-step-3">
-      <a class="nav-link" href="{{ route('logs.index') }}">
-        <img src="{{ isset(Auth::user()->organisation->logo) ? asset(Auth::user()->organisation->logo) : asset('assets/img/placeholder.png') }}" alt="Profile" class="rounded-circle bg-light p-1 me-1" width="30px" height="30px" style="object-fit: cover; border: 2px solid #fff">
-        <span>{{ __('User Activity') }}</span>
-      </a>
-    </li>
-    @endif
-
-    
-    <li class="nav-heading dashboard-tour-step-4">Publications</li>
-    @if(isset($other_organizations) && !$other_organizations->isEmpty())
-    @foreach($other_organizations as $row)
-    @if (!str_starts_with($row->name, 'Administrator'))
-    <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#org-nav-{{ $row->id }}" data-bs-toggle="collapse" href="#" aria-expanded="false">
-      <img src="{{ isset($row->logo) ? asset($row->logo) : asset('assets/img/placeholder.png') }}" alt="Profile" class="rounded-circle bg-light p-1 me-1" width="30px" height="30px" style="object-fit: cover; border: 2px solid #fff">{{ $row->name }}</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="org-nav-{{ $row->id }}" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-        <li>
-          <a class="publication-link" href="{{ route('organisation.publications', [$row->id, 'type' => 'public_indicators']) }}">
-            <i class="bi bi-circle bg-light"></i><span>Public Indicators</span>
+      <div class="nav-toggle">
+        <button class="btn btn-toggle toggle-sidebar">
+          <i class="gg-menu-right"></i>
+        </button>
+        <button class="btn btn-toggle sidenav-toggler">
+          <i class="gg-menu-left"></i>
+        </button>
+      </div>
+      <button class="topbar-toggler more">
+        <i class="gg-more-vertical-alt"></i>
+      </button>
+    </div>
+    <!-- End Logo Header -->
+  </div>
+  <div class="sidebar-wrapper scrollbar scrollbar-inner">
+    <div class="sidebar-content">
+      <ul class="nav nav-secondary">
+        <li class="nav-item active">
+          <a
+            data-bs-toggle="collapse"
+            href="{{ url('/dashboard') }}"
+            class="collapsed"
+            aria-expanded="false">
+            <i class="fas fa-home"></i>
+            <p>Dashboard</p>
+            <span class="caret"></span>
           </a>
+
         </li>
-        <li>
-          <a class="publication-link" href="{{ route('organisation.publications', [$row->id, 'type' => 'archives']) }}">
-            <i class="bi bi-circle bg-light"></i><span>Archives</span>
+
+        <!-- Menu Item -->
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#applications">
+            <i class="fas fa-layer-group"></i>
+            <p>Locations</p>
+            <span class="caret"></span>
           </a>
+          <div class="collapse" id="applications">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="{{ route('countries.index') }}">
+                  <span class="sub-item">Countries</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">Regions</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">Districts</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">Villages</span>
+                </a>
+              </li>
+
+            </ul>
+          </div>
         </li>
+        <!--End Menu Item -->
+        <!-- Menu Item -->
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#applications">
+            <i class="fas fa-layer-group"></i>
+            <p>Applications</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="applications">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="">
+                  <span class="sub-item">New Applications</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">Recieved Applications</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">New Applications</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--End Menu Item -->
+
+
+        <!-- Menu Item -->
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#job-listings">
+            <i class="fas fa-layer-group"></i>
+            <p>Job Listings</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="job-listings">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="">
+                  <span class="sub-item">New Applications</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">Recieved Applications</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">New Applications</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--End Menu Item -->
+
+        <!-- Menu Item -->
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#subscriptions">
+            <i class="fas fa-layer-group"></i>
+            <p>Subscriptions</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="subscriptions">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="">
+                  <span class="sub-item">New Applications</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">Recieved Applications</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">New Applications</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--End Menu Item -->
+
+
+
+        <!-- Menu Item -->
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#payments">
+            <i class="fas fa-layer-group"></i>
+            <p>Payments</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="payments">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="">
+                  <span class="sub-item">New Applications</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">Recieved Applications</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">New Applications</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--End Menu Item -->
+
+
+        <!-- Menu Item -->
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#profiles">
+            <i class="fas fa-layer-group"></i>
+            <p>Profiles</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="profiles">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="">
+                  <span class="sub-item">New Applications</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">Recieved Applications</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="sub-item">New Applications</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--End Menu Item -->
+
+
       </ul>
-    </li>
-    @endif
-    @endforeach
-    @else
-    <p>No organisation found...</p>
-    @endif
-
-  </ul>
-
-</aside><!-- End Sidebar-->
+    </div>
+  </div>
+</div>
