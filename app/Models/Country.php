@@ -18,7 +18,9 @@ class Country extends Model
     protected $fillable = [
         'id',
         'code',
+        'calling_code',
         'name',
+        'active'
     ];
 
     protected static function boot()

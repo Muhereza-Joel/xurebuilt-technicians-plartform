@@ -66,9 +66,10 @@
                                     <table id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
                                         <thead>
                                             <tr role="row">
-                                                <th style="width: 13.656px;">SNo.</th>
+                                                <th style="width: 5.656px;">SNo.</th>
+                                                <th style="width: 10.656px;">Code</th>
                                                 <th style="width: 135.656px;">Name</th>
-                                                <th style="width: 135.656px;">Name</th>
+                                                <th style="width: 10.656px;">Active</th>
                                                 <th style="width: 81.0938px;">Actions</th>
                                             </tr>
                                         </thead>
@@ -83,6 +84,14 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $country->code }}</td>
                                                 <td>{{ $country->name }}</td>
+                                                <td>
+                                                    @if($country->active)
+                                                    <span class="badge badge-success">Yes</span>
+                                                    @else
+                                                    <span class="badge badge-danger">No</span>
+                                                    @endif
+                                                </td>
+
                                                 <td>
                                                     <div class="btn-group dropdown">
                                                         <button class="btn btn-outline btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
