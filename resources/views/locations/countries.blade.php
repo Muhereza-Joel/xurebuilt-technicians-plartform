@@ -39,13 +39,13 @@
 
                                     <div class="form-group">
                                         <label for="code">Country Code</label>
-                                        <input type="text" value="{{ old('code') }}" class="form-control" id="code" name="code" placeholder="Enter Country Code">
+                                        <input autocomplete="off" type="text" value="{{ old('code') }}" class="form-control" id="code" name="code" placeholder="Enter Country Code">
                                         <small id="codeError" class="form-text text-danger d-none">Country code is required.</small>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="name">Country Name</label>
-                                        <input type="text" value="{{ old('name') }}" class="form-control" id="name" name="name" placeholder="Enter Country Name">
+                                        <input autocomplete="off" type="text" value="{{ old('name') }}" class="form-control" id="name" name="name" placeholder="Enter Country Name">
                                         <small id="nameError" class="form-text text-danger d-none">Country name is required.</small>
                                     </div>
 
