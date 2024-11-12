@@ -49,6 +49,10 @@ class CountryController extends Controller
             'name.unique' => 'The country name has already been taken.',
         ]);
 
+        // Transform the input data
+        $validated['code'] = strtoupper($validated['code']); // Convert code to uppercase
+        $validated['name'] = ucwords(strtolower($validated['name'])); // Capitalize the first letter of each word in the name
+
         Country::create($validated);
 
         return redirect()->back()->with(['success' => 'Country Saved Successfully']);
