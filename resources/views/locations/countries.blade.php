@@ -74,7 +74,7 @@
 
                                     <tbody>
                                         @if($countries->isEmpty())
-                                        <div class="alert alert-info">No Theories found...</div>
+                                        <div class="alert alert-info">No Countries found...</div>
                                         @else
 
                                         @foreach($countries as $country)
