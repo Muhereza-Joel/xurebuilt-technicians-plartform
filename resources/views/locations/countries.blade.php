@@ -28,6 +28,33 @@
                 </div>
 
                 <div class="row mt-0 g-0 px-2 py-2">
+                    <div class="col-md-12">
+                        <div class="d-flex align-items-center justify-content-between mx-2 mb-2">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Upload and Download
+                                </button>
+                                <ul class="dropdown-menu" style="min-width: 300px; padding: 15px;">
+                                    <!-- Upload Form -->
+                                    <li>
+                                        <form action="{{ route('uploadCountries') }}" method="POST" enctype="multipart/form-data" class="d-flex flex-column align-items-start">
+                                            @csrf
+                                            <div class="form-group mb-3">
+                                                <label for="file" class="form-label">Upload Countries Excel File</label>
+                                                <input type="file" name="file" id="file" class="form-control" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-info btn-sm">Upload</button>
+                                        </form>
+                                    </li>
+                                    <div class="dropdown-divider"></div>
+                                    <!-- Download Link -->
+                                    <li><a class="btn btn-primary btn-sm" href="{{ route('downloadCountriesTemplate') }}">Download Countries Template</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-header">
@@ -44,9 +71,23 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="code">Country Calling Code</label>
+                                        <input autocomplete="off" type="number" value="{{ old('calling_code') }}" class="form-control" id="callingcode" name="calling_code" placeholder="Enter Country Calling Code">
+                                        <small id="callingcodeError" class="form-text text-danger d-none">Country calling code is required.</small>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="name">Country Name</label>
                                         <input autocomplete="off" type="text" value="{{ old('name') }}" class="form-control" id="name" name="name" placeholder="Enter Country Name">
                                         <small id="nameError" class="form-text text-danger d-none">Country name is required.</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name">Use in Filters</label>
+                                        <select name="active" id="" class="form-control">
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
                                     </div>
 
                                     <div class="card-action p-2">
@@ -61,13 +102,17 @@
                             <div class="card-header">
                                 <h4 class="card-title">Showing All Countries</h4>
                             </div>
+                            @if($countries->isEmpty())
+                            <div class="alert alert-info m-2">No Countries found...</div>
+                            @else
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
+                                    <table class="table table-striped table-hover" role="grid" aria-describedby="basic-datatables_info">
                                         <thead>
                                             <tr role="row">
                                                 <th style="width: 5.656px;">SNo.</th>
                                                 <th style="width: 10.656px;">Code</th>
+                                                <th style="width: 10.656px;">Calling Code</th>
                                                 <th style="width: 135.656px;">Name</th>
                                                 <th style="width: 10.656px;">Active</th>
                                                 <th style="width: 81.0938px;">Actions</th>
@@ -75,14 +120,12 @@
                                         </thead>
 
                                         <tbody>
-                                            @if($countries->isEmpty())
-                                            <div class="alert alert-info">No Countries found...</div>
-                                            @else
 
                                             @foreach($countries as $country)
                                             <tr role="row" class="odd">
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $country->code }}</td>
+                                                <td>{{ $country->calling_code ? '+' . $country->calling_code : 'N/A' }}</td>
                                                 <td>{{ $country->name }}</td>
                                                 <td>
                                                     @if($country->active)
@@ -110,7 +153,6 @@
 
                                             </tr>
                                             @endforeach
-                                            @endif
 
                                         </tbody>
                                     </table>
@@ -120,6 +162,7 @@
                                     {{ $countries->links('pagination::bootstrap-4') }}
                                 </div>
                             </div>
+                            @endif
                         </div>
                     </div>
 
@@ -140,6 +183,7 @@
 
                 let isValid = true;
                 const code = $('#code').val().trim();
+                const callingcode = $('#callingcode').val().trim();
                 const name = $('#name').val().trim();
 
                 // Validate country code
@@ -149,6 +193,15 @@
                     isValid = false;
                 } else {
                     $('#code').removeClass('is-invalid').addClass('is-valid');
+                }
+
+                // Validate calling code
+                if (callingcode === '' || isNaN(callingcode)) {
+                    $('#callingcodeError').removeClass('d-none');
+                    $('#callingcode').addClass('is-invalid');
+                    isValid = false;
+                } else {
+                    $('#callingcode').removeClass('is-invalid').addClass('is-valid');
                 }
 
                 // Validate country name
@@ -167,7 +220,7 @@
             });
 
             // Remove validation error on input
-            $('#code, #name').on('input', function() {
+            $('#code, #callingcode, #name').on('input', function() {
                 $(this).removeClass('is-invalid is-valid'); // Remove both validation classes
                 $(this).siblings('.form-text.text-danger').addClass('d-none'); // Hide error message
             });

@@ -35,7 +35,7 @@
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('countries.update', $country->id ) }}" method="POST" id="countryForm">
-                                    @csrf 
+                                    @csrf
                                     @method('PUT')
                                     <div class="form-group">
                                         <label for="code">Country Code</label>
@@ -44,9 +44,23 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="code">Country Calling Code</label>
+                                        <input autocomplete="off" type="number" value="{{ old('calling_code', $country->calling_code) }}" class="form-control" id="callingcode" name="calling_code" placeholder="Enter Country Calling Code">
+                                        <small id="callingcodeError" class="form-text text-danger d-none">Country calling code is required.</small>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="name">Country Name</label>
                                         <input autocomplete="off" type="text" value="{{ old('name', $country->name) }}" class="form-control" id="name" name="name" placeholder="Enter Country Name">
                                         <small id="nameError" class="form-text text-danger d-none">Country name is required.</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name">Use in Filters</label>
+                                        <select name="active" id="active" class="form-control">
+                                            <option value="1" {{ $country->active == 1 ? 'selected' : '' }}>Yes</option>
+                                            <option value="0" {{ $country->active == 0 ? 'selected' : '' }}>No</option>
+                                        </select>
                                     </div>
 
                                     <div class="card-action p-2">
@@ -57,7 +71,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
         </div>
@@ -75,6 +89,7 @@
 
                 let isValid = true;
                 const code = $('#code').val().trim();
+                const callingcode = $('#callingcode').val().trim();
                 const name = $('#name').val().trim();
 
                 // Validate country code
@@ -84,6 +99,15 @@
                     isValid = false;
                 } else {
                     $('#code').removeClass('is-invalid').addClass('is-valid');
+                }
+
+                // Validate calling code
+                if (callingcode === '' || isNaN(callingcode)) {
+                    $('#callingcodeError').removeClass('d-none');
+                    $('#callingcode').addClass('is-invalid');
+                    isValid = false;
+                } else {
+                    $('#callingcode').removeClass('is-invalid').addClass('is-valid');
                 }
 
                 // Validate country name
@@ -102,7 +126,7 @@
             });
 
             // Remove validation error on input
-            $('#code, #name').on('input', function() {
+            $('#code, #callingcode, #name').on('input', function() {
                 $(this).removeClass('is-invalid is-valid'); // Remove both validation classes
                 $(this).siblings('.form-text.text-danger').addClass('d-none'); // Hide error message
             });
