@@ -62,48 +62,51 @@
                                 <h4 class="card-title">Showing All Countries</h4>
                             </div>
                             <div class="card-body">
-                                <table id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
-                                    <thead>
-                                        <tr role="row">
-                                            <th style="width: 13.656px;">SNo.</th>
-                                            <th style="width: 135.656px;">Name</th>
-                                            <th style="width: 135.656px;">Name</th>
-                                            <th style="width: 81.0938px;">Actions</th>
-                                        </tr>
-                                    </thead>
+                                <div class="table-responsive">
+                                    <table id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
+                                        <thead>
+                                            <tr role="row">
+                                                <th style="width: 13.656px;">SNo.</th>
+                                                <th style="width: 135.656px;">Name</th>
+                                                <th style="width: 135.656px;">Name</th>
+                                                <th style="width: 81.0938px;">Actions</th>
+                                            </tr>
+                                        </thead>
 
-                                    <tbody>
-                                        @if($countries->isEmpty())
-                                        <div class="alert alert-info">No Countries found...</div>
-                                        @else
+                                        <tbody>
+                                            @if($countries->isEmpty())
+                                            <div class="alert alert-info">No Countries found...</div>
+                                            @else
 
-                                        @foreach($countries as $country)
-                                        <tr role="row" class="odd">
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $country->code }}</td>
-                                            <td>{{ $country->name }}</td>
-                                            <td>
-                                                <div class="btn-group dropdown">
-                                                    <button class="btn btn-outline btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Select Action
-                                                    </button>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        <li>
-                                                            <a class="dropdown-item" href="{{ route('countries.edit', $country->id) }}">Edit</a>
-                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                            <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item" href="#">Create Region</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
+                                            @foreach($countries as $country)
+                                            <tr role="row" class="odd">
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $country->code }}</td>
+                                                <td>{{ $country->name }}</td>
+                                                <td>
+                                                    <div class="btn-group dropdown">
+                                                        <button class="btn btn-outline btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            Select Action
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li>
+                                                                <a class="dropdown-item" href="{{ route('countries.edit', $country->id) }}">Edit</a>
+                                                                <a class="dropdown-item" href="#">Delete</a>
+                                                                <div class="dropdown-divider"></div>
+                                                                <a class="dropdown-item" href="#">Create Region</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
 
-                                        </tr>
-                                        @endforeach
-                                        @endif
+                                            </tr>
+                                            @endforeach
+                                            @endif
 
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+
+                                </div>
                                 <div class="d-flex justify-content-center">
                                     {{ $countries->links('pagination::bootstrap-4') }}
                                 </div>
