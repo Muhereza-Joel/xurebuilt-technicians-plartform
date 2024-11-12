@@ -79,7 +79,8 @@ class CountryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $country = Country::findOrFail($id);
+        return view('locations.editCountry', compact('country'));
     }
 
     /**
@@ -91,8 +92,27 @@ class CountryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'code' => 'string|required|unique:countries,code,' . $id,
+            'name' => 'string|required|unique:countries,name,' . $id,
+        ], [
+            'code.required' => 'The country code is required.',
+            'code.string' => 'The country code must be a string.',
+            'code.unique' => 'The country code has already been taken.',
+            'name.required' => 'The country name is required.',
+            'name.string' => 'The country name must be a string.',
+            'name.unique' => 'The country name has already been taken.',
+        ]);
+
+        // Find the country by ID
+        $country = Country::findOrFail($id);
+
+        // Update the country with validated data
+        $country->update($validated);
+
+        return redirect()->back()->with(['success' => 'Country Updated Successfully', 'country' => $country]);
     }
+
 
     /**
      * Remove the specified resource from storage.

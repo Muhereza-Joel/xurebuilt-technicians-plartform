@@ -89,7 +89,7 @@
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li>
-                                                            <a class="dropdown-item" href="#">Edit</a>
+                                                            <a class="dropdown-item" href="{{ route('countries.edit', $country->id) }}">Edit</a>
                                                             <a class="dropdown-item" href="#">Delete</a>
                                                             <div class="dropdown-divider"></div>
                                                             <a class="dropdown-item" href="#">Create Region</a>
